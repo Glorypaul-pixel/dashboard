@@ -56,10 +56,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 40%;
-  padding: 1rem;
+  width: 50%;
+  padding: 2rem 1rem 1rem;
 }
-
+.iconsRed {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 40%;
+}
 /* Button and dropdown styles */
 .headButton {
   background-color: white;
@@ -118,16 +123,16 @@ body {
 /* Content styling */
 .content {
   text-align: center;
-  padding:3rem 1rem;
-  background-color: rgba(0, 0, 0, 0.6);
+  padding: 3rem 1rem;
   border-radius: 0 8rem;
   max-width: 600px;
   margin: auto;
+  color: black;
 }
 
 .content h1 {
   font-size: 3rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .content p {
@@ -136,12 +141,13 @@ body {
 }
 
 .content button {
-  border: 2px solid white;
-  background-color: transparent;
+  border: none;
+  background-color: #ff7f00;
   padding: 1rem 2rem;
+  font-size: 1rem;
+  color: white;
   margin: 10px;
   border-radius: 6px;
-  color: white;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -196,17 +202,19 @@ body {
     opacity: 1;
   }
 }
-.infoIcon, .notificon {
-    animation: slideInFromBottom 1s ease-out;
+.infoIcon,
+.notificon {
+  animation: slideInFromBottom 1s ease-out;
   animation-delay: 0.3s;
 }
-.content, .headButton {
+.content,
+.headButton {
   animation: slideInFromRight 1s ease-out;
   animation-delay: 0.3s;
 }
 .profile-container {
-    animation: slideInFromLeft 1s ease-out;
-    animation-delay: 0.3s;
+  animation: slideInFromLeft 1s ease-out;
+  animation-delay: 0.3s;
 }
 
 .HeadSubBtn {
@@ -219,64 +227,99 @@ body {
   animation-delay: 0.2s;
 }
 /* Styling the info and notification icons with a round shape and white background */
-.infoIcon, .notificon {
-    background-color: white;
-    border-radius: 50%;
-    padding: 10px;
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    margin: 0 10px;
-  }
-  
-  .infoIcon i, .notificon i {
-    font-size: 20px;
-    color: #1C797E;
-  }
-  
-  /* Notification count bubble */
-  .notification-count {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background-color: red;
-    color: white;
-    border-radius: 50%;
-    font-size: 12px;
-    padding: 5px;
-    width: 20px;
-    height: 20px;
-    text-align: center;
-  }
-  
-  /* Profile picture styling */
-  .profile-picture {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #ddd;
-    object-fit: cover;
-  }
-  
-  /* Container for profile image and name */
-  .profile-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  /* Profile name styling */
-  .profile-name {
-    font-size: 18px;
-    color: #FFFFFF;
-  }
-  
-  /* Profile picture upload input (hidden) */
-  .profile-picture-input {
-    display: none;
-  }
-  
+.infoIcon,
+.notificon {
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.infoIcon i,
+.notificon i {
+  font-size: 20px;
+  color: #1c797e;
+}
+
+/* Notification count bubble */
+.notification-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  padding: 5px;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+}
+
+/* Profile picture styling */
+.profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ddd;
+  object-fit: cover;
+}
+
+/* Container for profile image and name */
+.profile-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Profile name styling */
+.profile-name {
+  font-size: 18px;
+  color: #ffffff;
+}
+
+/* Profile picture upload input (hidden) */
+.profile-picture-input {
+  display: none;
+}
+
 /* Media Queries for Responsiveness */
+@media (max-width: 1100px) {
+  .content {
+    text-align: center;
+    padding: 3rem 1rem;
+    border-radius: 0 8rem;
+    max-width: 400px;
+    margin: auto;
+    color: black;
+  }
+  .content h1 {
+    font-size: 2.3rem;
+    margin-bottom: 2rem;
+  }
+  .iconsRed {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 50%;
+  }
+  .content p {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .content button {
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
+  }
+  .mainBoard nav {
+    width: 60%;
+    padding: 2rem 1rem 1rem;
+  }
+}
 @media (max-width: 768px) {
   .mainBoard nav {
     width: 100%;
@@ -286,6 +329,8 @@ body {
   .profile-container {
     display: block;
     text-align: center;
+    display: flex;
+    align-items: center;
   }
 
   .profile-name {
@@ -298,24 +343,36 @@ body {
 }
 
 @media (max-width: 480px) {
+  .content {
+    margin: 1rem auto;
+  }
   .content h1 {
     font-size: 2rem;
   }
-
+  .bgimg {
+    background-image: none;
+    background-color: white;
+  }
   .content p {
     font-size: 1.2rem;
   }
 
   .content button {
-    width: 100%;
     padding: 1rem;
   }
-
+  .mainBoard header {
+    padding-bottom: .9rem;
+  }
   .mainBoard nav {
     flex-direction: column;
-    align-items: center;
+    gap: 1rem;
+    align-items: flex-start;
   }
-
+  .iconsRed {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
   .headButton {
     width: 100%;
   }
