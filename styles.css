@@ -1,0 +1,322 @@
+@font-face {
+  font-family: "Visby Regular";
+  src: url("./fonts/visby-cdnfonts/VisbyBold.otf") format("woff2"),
+    url("./fonts/Visby-Round-Font/Visby-Round-www.Dfonts.org/Webfont/VisbyRoundCF-Light.woff")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Visby Regular", Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* Background image */
+.bgimg {
+  background-image: url("./images/background.jpg");
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main board styling */
+.mainBoard {
+  background-color: #f4f6f9;
+}
+
+.mainBoard .menubar {
+  background-color: #1c797e;
+  padding: 1rem;
+}
+
+/* Header and navigation styling */
+.mainBoard header {
+  background-color: #1c797e;
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.mainBoard nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 40%;
+  padding: 1rem;
+}
+
+/* Button and dropdown styles */
+.headButton {
+  background-color: white;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.HeadSubBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.countryDropdown {
+  background-color: transparent;
+  border: none;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.countryDropdown option {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.flagImg i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-picture {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+}
+
+.profile-name {
+  font-size: 18px;
+  color: #ffffff;
+}
+
+/* Content styling */
+.content {
+  text-align: center;
+  padding:3rem 1rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 0 8rem;
+  max-width: 600px;
+  margin: auto;
+}
+
+.content h1 {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+
+.content p {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.content button {
+  border: 2px solid white;
+  background-color: transparent;
+  padding: 1rem 2rem;
+  margin: 10px;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.content button:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* ANIMATIONS */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.infoIcon, .notificon {
+    animation: slideInFromBottom 1s ease-out;
+  animation-delay: 0.3s;
+}
+.content, .headButton {
+  animation: slideInFromRight 1s ease-out;
+  animation-delay: 0.3s;
+}
+.profile-container {
+    animation: slideInFromLeft 1s ease-out;
+    animation-delay: 0.3s;
+}
+
+.HeadSubBtn {
+  animation: slideInFromTop 1.5s ease-out;
+  animation-delay: 0.7s;
+}
+
+.mainBoard header {
+  animation: fadeIn 1s ease-in-out;
+  animation-delay: 0.2s;
+}
+/* Styling the info and notification icons with a round shape and white background */
+.infoIcon, .notificon {
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    margin: 0 10px;
+  }
+  
+  .infoIcon i, .notificon i {
+    font-size: 20px;
+    color: #1C797E;
+  }
+  
+  /* Notification count bubble */
+  .notification-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    padding: 5px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+  }
+  
+  /* Profile picture styling */
+  .profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ddd;
+    object-fit: cover;
+  }
+  
+  /* Container for profile image and name */
+  .profile-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  /* Profile name styling */
+  .profile-name {
+    font-size: 18px;
+    color: #FFFFFF;
+  }
+  
+  /* Profile picture upload input (hidden) */
+  .profile-picture-input {
+    display: none;
+  }
+  
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .mainBoard nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .profile-container {
+    display: block;
+    text-align: center;
+  }
+
+  .profile-name {
+    margin-top: 10px;
+  }
+
+  .content {
+    padding: 3rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .content h1 {
+    font-size: 2rem;
+  }
+
+  .content p {
+    font-size: 1.2rem;
+  }
+
+  .content button {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .mainBoard nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .headButton {
+    width: 100%;
+  }
+}
